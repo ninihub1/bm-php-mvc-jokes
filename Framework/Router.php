@@ -8,7 +8,7 @@
  *
  * Filename:        Router.php
  * Location:
- * Project:         XXX-PHP-MVC-Jokes
+ * Project:         bm-php-mvc-jokes
  * Date Created:    DD/MM/YYYY
  *
  * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>

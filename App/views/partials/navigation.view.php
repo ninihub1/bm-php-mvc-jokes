@@ -66,7 +66,7 @@ if ($authenticated->isAuthenticated()){
         <?php
         if ($authenticated->isAuthenticated()):
             ?>
-            <p class="text-zinc-300 ">NickName &gt</p>
+            <p class="text-zinc-300 "><?= $given_name?></p>
 
             <form method="POST" action="/" class="">
                 <button class="pb-2 px-1 text-text-zinc-700-200 hover:text-sky-300
@@ -78,13 +78,13 @@ if ($authenticated->isAuthenticated()){
         <?php
         else:
             ?>
-            <p><a href="/"
+            <p><a href="/auth/login"
                   class="pb-2 px-1 text-text-zinc-700-200 hover:text-sky-300
                      border-0 border-b-2 hover:border-b-sky-500
                      transition ease-in-out duration-500">
                     Login
                 </a></p>
-            <p><a href="/"
+            <p><a href="/auth/register"
                   class="pb-2 px-1 text-text-zinc-700-200 hover:text-sky-300
                      border-0 border-b-2 hover:border-b-sky-500
                      transition ease-in-out duration-500">

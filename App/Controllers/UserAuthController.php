@@ -7,7 +7,7 @@
  *
  * Filename:        UserAuthController.php
  * Location:        App/Controllers
- * Project:         XXX-PHP-MVC-Jokes
+ * Project:         bm-php-mvc-jokes
  * Date Created:    DD/MM/YYYY
  *
  * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
@@ -75,8 +75,7 @@ class UserAuthController
         $givenName = $_POST['given_name'] ?? null;
         $familyName = $_POST['family_name'] ?? null;
         $email = $_POST['email'] ?? null;
-        $city = $_POST['city'] ?? null;
-        $state = $_POST['state'] ?? null;
+        $nickname = $_POST['nickname'] ?? $givenName;
         $password = $_POST['password'] ?? null;
         $passwordConfirmation = $_POST['password_confirmation'] ?? null;
 
@@ -89,6 +88,10 @@ class UserAuthController
 
         if (!Validation::string($givenName, 2, 50)) {
             $errors['given_name'] = 'Given Name must be between 2 and 50 characters';
+        }
+
+        if (!Validation::string($nickname, 2, 50)) {
+            $errors['nickname'] = 'Nickname must be between 2 and 50 characters';
         }
 
         if (!Validation::string($familyName, 0, 50)) {
@@ -109,6 +112,7 @@ class UserAuthController
                 'user' => [
                     'given_name' => $givenName,
                     'family_name' => $familyName,
+                    'nickname' => $nickname,
                     'email' => $email,
                 ]
             ]);
@@ -134,11 +138,14 @@ class UserAuthController
         $params = [
             'given_name' => $givenName,
             'family_name' => $familyName,
+            'nickname' => $nickname,
             'email' => $email,
-            'password' => password_hash($password, PASSWORD_DEFAULT)
+            'password' => password_hash($password, PASSWORD_DEFAULT),
+            'created_at' => date('Y-m-d H:i:s'),
+            "updated_at" => date('Y-m-d H:i:s')
         ];
 
-        $this->db->query('INSERT INTO users (given_name, family_name, email, user_password) VALUES (:given_name, :family_name, :email, :password)', $params);
+        $this->db->query('INSERT INTO users (given_name, family_name, nickname, email, user_password, created_at, updated_at) VALUES (:given_name, :family_name, :nickname, :email, :password, :created_at, :updated_at)', $params);
 
         // Get new user ID
         $userId = $this->db->conn->lastInsertId();
@@ -151,7 +158,7 @@ class UserAuthController
             'email' => $email,
         ]);
 
-        redirect('/');
+        redirect('/auth/login');
     }
 
     /**

@@ -4,7 +4,7 @@
  *
  * Filename:        create.view.php
  * Location:        App/views/usersAuth
- * Project:         XXX-PHP-MVC-Jokes
+ * Project:         bm-php-mvc-jokes
  * Date Created:    23/08/2024
  *
  * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
@@ -43,6 +43,14 @@ loadPartial('navigation'); ?>
                            name="family_name" placeholder="Family Name"
                            class="w-full px-4 py-2 border border-b-zinc-300 rounded focus:outline-none"
                            value="<?= $user['family_name'] ?? '' ?>"/>
+                </section>
+
+                <section class="mb-4">
+                    <label for="Nickname" class="mt-4 pb-1">Nickname:</label>
+                    <input type="text" id="FamilyName"
+                           name="nickname" placeholder="Nickname"
+                           class="w-full px-4 py-2 border border-b-zinc-300 rounded focus:outline-none"
+                           value="<?= $user['nickname'] ?? '' ?>"/>
                 </section>
 
                 <section class="mb-4">
