@@ -18,6 +18,7 @@ $authenticated = new Authorise();
 if ($authenticated->isAuthenticated()){
     $user = Session::get('user')??'n/a';
     $given_name = $user['given_name']??'n/a';
+    $nickname = $user['nickname']?? $given_name;
 }
 ?>
 
@@ -66,7 +67,7 @@ if ($authenticated->isAuthenticated()){
         <?php
         if ($authenticated->isAuthenticated()):
             ?>
-            <p class="text-zinc-300 "><?= $given_name?></p>
+            <p class="text-zinc-300 "><?= $nickname?></p>
 
             <form method="POST" action="/auth/logout" class="">
                 <button class="pb-2 px-1 text-text-zinc-700-200 hover:text-sky-300

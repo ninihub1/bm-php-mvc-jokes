@@ -154,6 +154,7 @@ class UserAuthController
         Session::set('user', [
             'id' => $userId,
             'given_name' => $givenName,
+            'nickname' => $nickname,
             'family_name' => $familyName,
             'email' => $email,
         ]);
@@ -234,6 +235,7 @@ class UserAuthController
         Session::set('user', [
             'id' => $user->id,
             'given_name' => $user->given_name,
+            'nickname' => $user->nickname,
             'family_name' => $user->family_name,
             'email' => $user->email,
         ]);
