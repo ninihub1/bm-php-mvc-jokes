@@ -37,9 +37,20 @@ class StaticPageController
      */
     public function index()
     {
-        // TODO: Crete the method code for the home page
-        echo"<h1>CODE INSTALLED CORRECTLY</h1>";
-        echo"<p>Time to work on the rest of the application</p>";
+        $jokes = $this->db->query('SELECT * FROM jokes')->fetchAll();
+
+        $jokeCount = $this->db->query('SELECT count(id) as total FROM jokes')->fetch();
+
+        $categoryCount = $this->db->query('SELECT count(id) as total FROM categories ')->fetch();
+
+        $userCount = $this->db->query('SELECT count(id) as total FROM users')->fetch();
+
+        loadView('home', [
+            'jokes' => $jokes,
+            'jokeCount' => $jokeCount,
+            'categoryCount' => $categoryCount,
+            'userCount' => $userCount
+        ]);
     }
 
     /*
@@ -50,5 +61,6 @@ class StaticPageController
     public function about()
     {
         // TODO: Crete the method code for the about page
+        loadView('about');
     }
 }
