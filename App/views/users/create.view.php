@@ -60,6 +60,14 @@ loadPartial('navigation');
                 </section>
 
                 <section class="mb-4">
+                    <label for="Nickname" class="mt-4 pb-1">Nickname:</label>
+                    <input type="text" id="Nickname"
+                           name="nickname" placeholder="Nickname"
+                           class="w-full px-4 py-2 border border-b-zinc-300 rounded focus:outline-none"
+                           value="<?= $user['nickname'] ?? '' ?>"/>
+                </section>
+
+                <section class="mb-4">
                     <label for="Email" class="mt-4 pb-1">Email:</label>
                     <input type="email" id="Email"
                            name="email" placeholder="Email Address"

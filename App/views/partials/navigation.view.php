@@ -18,7 +18,7 @@ $authenticated = new Authorise();
 if ($authenticated->isAuthenticated()){
     $user = Session::get('user')??'n/a';
     $given_name = $user['given_name']??'n/a';
-    $nickname = $user['nickname']?? $given_name;
+    $nickname = !empty($user['nickname']) ? $user['nickname'] : $given_name;
 }
 ?>
 
@@ -54,20 +54,29 @@ if ($authenticated->isAuthenticated()){
                 Categories
             </a></p>
 
-        <p><a href="/"
+    <?php if($authenticated->isAuthenticated()): ?>
+        <p><a href="/users"
               class="pb-2 px-1 text-text-zinc-700-200 hover:text-sky-300
                      border-0 border-b-2 hover:border-b-sky-500
                      transition ease-in-out duration-500">
                 Users
             </a></p>
-        <!-- /Show -->
-
         <div class="flex-grow"></div>
+    <?php else: ?>
+        <p><a href="/auth/login"
+              class="pb-2 px-1 text-text-zinc-700-200 hover:text-sky-300
+                     border-0 border-b-2 hover:border-b-sky-500
+                     transition ease-in-out duration-500">
+                Users
+            </a></p>
+        <div class="flex-grow"></div>
+    <?php endif; ?>
+
 
         <?php
         if ($authenticated->isAuthenticated()):
             ?>
-            <p class="text-zinc-300 "><?= $nickname?></p>
+            <p class="text-zinc-300 "><?= $nickname ?></p>
 
             <form method="POST" action="/auth/logout" class="">
                 <button class="pb-2 px-1 text-text-zinc-700-200 hover:text-sky-300

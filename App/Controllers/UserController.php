@@ -45,7 +45,7 @@ class UserController
     // TODO: Create the index method
     public function index()
     {
-        $sql = "SELECT * FROM users ORDER BY given_name, family_name, created_at";
+        $sql = "SELECT * FROM users ORDER BY given_name, family_name, nickname, created_at";
 
         $users = $this->db->query($sql)->fetchAll();
 
@@ -72,7 +72,7 @@ class UserController
         ];
 
 //        $sql = 'SELECT * FROM users WHERE id = :id ';
-        $sql = "SELECT u1.id as id, u1.given_name as given_name, u1.family_name as family_name, u1.email as email,
+        $sql = "SELECT u1.id as id, u1.given_name as given_name, u1.family_name as family_name, u1.nickname as nickname, u1.email as email,
                        u1.user_id as user_id, u1.created_at as created_at, u1.updated_at as updated_at,
                        CONCAT(u2.given_name, ' ', u2.family_name) AS added_by
                 FROM users u1
@@ -105,6 +105,7 @@ class UserController
         $query = "SELECT * FROM users 
                   WHERE given_name LIKE :keywords 
                      OR family_name LIKE :keywords 
+                     OR nickname LIKE :keywords
                      OR email LIKE :keywords 
                   ORDER BY given_name, family_name ";
 
@@ -141,7 +142,7 @@ class UserController
      */
     public function store()
     {
-        $allowedFields = ['given_name', 'family_name', 'email', 'user_password', 'confirm_password',];
+        $allowedFields = ['given_name', 'family_name', 'nickname', 'email', 'user_password', 'confirm_password',];
 
         $newUserData = array_intersect_key($_POST, array_flip($allowedFields));
         $newUserData['user_id'] = Session::get('user')['id'];
@@ -173,6 +174,8 @@ class UserController
             ];
             $passwordHash = password_hash($_POST['user_password'], PASSWORD_BCRYPT, $hashOptions);
             $newUserData['user_password'] = $passwordHash;
+        } else {
+            unset($newUserData['user_password']);
         }
 
         // Save the submitted data
@@ -239,7 +242,9 @@ class UserController
         loadView('users/edit', [
             'user' => $user
         ]);
+        return null;
     }
+
 
     /**
      * Update a user
@@ -263,14 +268,14 @@ class UserController
             exit();
         }
 
-        // Authorisation
+       // Authorisation
         if (!Authorisation::isOwner($user->user_id) && !Authorisation::isUser($user->id)) {
             Session::setFlashMessage('error_message',
                 'You are not authorised to update this user');
             return redirect('/users/' . $user->id);
         }
 
-        $allowedFields = ['given_name', 'family_name', 'user_password', 'confirm_password',];
+        $allowedFields = ['given_name', 'family_name', 'nickname', 'user_password', 'confirm_password',];
 
         $updateValues = array_intersect_key($_POST, array_flip($allowedFields)) ?? [];
 
@@ -323,6 +328,8 @@ class UserController
             ];
             $passwordHash = password_hash($_POST['user_password'], PASSWORD_BCRYPT, $hashOptions);
             $updateValues['user_password'] = $passwordHash;
+        } else {
+            unset($updateValues['user_password']);
         }
 
         $updateValues['updated_at'] = date('Y-m-d H:i:s');
