@@ -9,9 +9,9 @@
  * Filename:        StaticPageController.php
  * Location:
  * Project:         bm-php-mvc-jokes
- * Date Created:    DD/MM/YYYY
+ * Date Created:    20/10/2024
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Blony Maunela 20114950@tafe.wa.edu.au
  *
  */
 
@@ -22,18 +22,31 @@ use Framework\Database;
 
 class StaticPageController
 {
+    /**
+     * @var Database
+     */
     protected $db;
 
+    /**
+     * StaticPageController Constructor
+     *
+     * Instantiate the database connection for use in this class
+     * storing the connection in the protected <code>$db</code>
+     * property.
+     *
+     * @throws \Exception
+     */
     public function __construct()
     {
         $config = require basePath('config/db.php');
         $this->db = new Database($config);
     }
 
-    /*
-     * Show the home page
+    /**
+     * Show the home page.
      *
      * @return void
+     * @throws \Exception
      */
     public function index()
     {
@@ -53,7 +66,7 @@ class StaticPageController
         ]);
     }
 
-    /*
+    /**
      * Show the about static page
      *
      * @return void

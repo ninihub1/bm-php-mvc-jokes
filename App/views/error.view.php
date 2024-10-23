@@ -7,7 +7,7 @@
  * Project:         bm-php-mvc-jokes
  * Date Created:    23/08/2024
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Blony Maunela 20114950@tafe.wa.edu.au
  *
  */
 
@@ -35,7 +35,7 @@ loadPartial('navigation');
                     <p>
                         <a class="underline underline-offset-2
                                   hover:text-black transition ease-in-out duration-500"
-                           href="/products">Go Back To Products</a>
+                           href="/">Go Back To Jokes</a>
                     </p>
                 </div>
             </div>

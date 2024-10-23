@@ -1,21 +1,21 @@
 <?php
 /**
- * FILE TITLE GOES HERE
+ * User Creation View
  *
- * DESCRIPTION OF THE PURPOSE AND USE OF THE CODE
- * MAY BE MORE THAN ONE LINE LONG
- * KEEP LINE LENGTH TO NO MORE THAN 96 CHARACTERS
+ * This file provides a form for adding new users within the
+ * bm-php-mvc-jokes web application. It allows users to input
+ * their given name, family name, nickname, email, and password.
  *
- * Filename:        index.view.php
- * Location:        ${FILE_LOCATION}
+ * Filename:        create.view.php
+ * Location:        /App/views/users
  * Project:         bm-php-mvc-jokes
- * Date Created:    DD/MM/YYYY
+ * Date Created:    20/10/2024
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Blony Maunela 20114950@tafe.wa.edu.au
  *
  */
 
-$pageTitle = "Add | Users | XXX-MVC-Jokes";
+$pageTitle = "Add | Users | bm-php-mvc-jokes";
 
 loadPartial("header", ["pageTitle"=>$pageTitle]);
 loadPartial('navigation');

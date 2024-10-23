@@ -4,10 +4,10 @@
  *
  * Filename:        UserController.php
  * Location:        /App/Controllers
- * Project:         XXX-mvc-jokes
+ * Project:         bm-php-mvc-jokes
  * Date Created:    6/09/2024
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Blony Maunela 20114950@tafe.wa.edu.au
  *
  */
 
@@ -42,7 +42,12 @@ class UserController
         $this->db = new Database($config);
     }
 
-    // TODO: Create the index method
+    /**
+     * Show the users page.
+     *
+     * @return void
+     * @throws \Exception
+     */
     public function index()
     {
         $sql = "SELECT * FROM users ORDER BY given_name, family_name, nickname, created_at";
@@ -54,8 +59,6 @@ class UserController
             'users' => $users
         ]);
     }
-
-    // TODO: Create the show method
 
     /**
      * Show a single user
@@ -91,10 +94,8 @@ class UserController
         ]);
     }
 
-    // TODO: Create a search method for users
-
     /**
-     * Search users by keywords/location
+     * Search users by keywords
      *
      * @return void
      */
@@ -107,7 +108,7 @@ class UserController
                      OR family_name LIKE :keywords 
                      OR nickname LIKE :keywords
                      OR email LIKE :keywords 
-                  ORDER BY given_name, family_name ";
+                  ORDER BY given_name, family_name, nickname, email ";
 
         $params = [
             'keywords' => "%{$keywords}%",
@@ -121,10 +122,8 @@ class UserController
         ]);
     }
 
-    // TODO: Create the create method
-
     /**
-     * Show the create user form
+     * Show the create user page.
      *
      * @return void
      */
@@ -132,8 +131,6 @@ class UserController
     {
         loadView('users/create');
     }
-
-    // TODO: Create the store
 
     /**
      * Store data in database
@@ -159,7 +156,6 @@ class UserController
         }
 
         if (!empty($errors)) {
-            // Reload view with errors
             loadView('users/create', [
                 'errors' => $errors,
                 'user' => $newUserData
@@ -178,7 +174,6 @@ class UserController
             unset($newUserData['user_password']);
         }
 
-        // Save the submitted data
         $fields = [];
 
         foreach ($newUserData as $field => $value) {
@@ -190,7 +185,6 @@ class UserController
 
 
         foreach ($newUserData as $field => $value) {
-            // Convert empty strings to null
             if ($value === '') {
                 $newUserData[$field] = null;
             }
@@ -226,13 +220,11 @@ class UserController
 
         $user = $this->db->query('SELECT * FROM users WHERE id = :id', $params)->fetch();
 
-        // Check if user exists
         if (!$user) {
             ErrorController::notFound('User not found');
             exit();
         }
 
-        // Authorisation
         if (!Authorisation::isOwner($user->user_id) && !Authorisation::isUser($user->id)) {
             Session::setFlashMessage('error_message',
                 'You are not authorized to update this user');

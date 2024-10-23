@@ -5,7 +5,7 @@
  * Filename:        db.php
  * Location:        config/
  * Project:         bm-php-mvc-jokes
- * Date Created:    DD/MM/YYYY
+ * Date Created:    20/10/2024
  *
  * Author:          YOUR NAME <StudentID@tafe.wa.edu.au>
  *

@@ -7,15 +7,15 @@
  * KEEP LINE LENGTH TO NO MORE THAN 96 CHARACTERS
  *
  * Filename:        index.view.php
- * Location:        ${FILE_LOCATION}
+ * Location:        /App/views/users
  * Project:         bm-php-mvc-jokes
- * Date Created:    DD/MM/YYYY
+ * Date Created:    20/10/2024
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Blony Maunela 20114950@tafe.wa.edu.au
  *
  */
 
-$pageTitle = "Show | Users | XXX-MVC-Jokes";
+$pageTitle = "Show | Users | bm-php-mvc-jokes";
 
 loadPartial("header", ["pageTitle" => $pageTitle]);
 loadPartial('navigation');
@@ -85,7 +85,7 @@ loadPartial('navigation');
 
 
                     <?php
-                    if (Framework\Authorisation::isOwner($user->user_id) || Framework\Authorisation::isUser($user->id)) :
+                    if (Framework\Authorisation::isOwner($user->id) || Framework\Authorisation::isUser($user->id)) :
                         ?>
                         <form method="POST"
                               class="border-0 border-t-1 border-zinc-300 text-lg flex flex-row">
@@ -122,6 +122,4 @@ loadPartial('navigation');
 
 
 <?php
-require_once basePath("App/views/partials/footer.view.php");
-?>
-
+loadView('footer');

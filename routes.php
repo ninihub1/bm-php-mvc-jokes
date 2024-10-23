@@ -4,10 +4,10 @@
  *
  * Filename:        routes.php
  * Location:        /
- * Project:         XXX-mvc-jokes
+ * Project:         bm-php-mvc-jokes
  * Date Created:    06/09/2024
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Blony Maunela 20114950@tafe.wa.edu.au
  * Author:          Student Name <student_id@tafe.wa.edu.au>
  */
 
@@ -20,6 +20,16 @@ $router->get('/about', 'StaticPageController@about');
 /* ----------------------------------------------------------------------------
  * Jokes Endpoints
  */
+$router->get('/jokes', 'JokeController@index');
+$router->get('jokes/create', 'JokeController@create', ['auth']);
+$router->get('jokes/edit/{id}', 'JokeController@edit', ['auth']);
+$router->get('jokes/search', 'JokeController@search');
+$router->get('jokes/{id}', 'JokeController@show');
+
+$router->post('jokes', 'JokeController@store', ['auth']);
+$router->put('jokes/{id}', 'JokeController@update', ['auth']);
+$router->delete('jokes/delete/{id}', 'JokeController@destroy', ['auth']);
+
 
 
 /* ----------------------------------------------------------------------------

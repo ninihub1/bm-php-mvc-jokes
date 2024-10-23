@@ -7,11 +7,11 @@
  * KEEP LINE LENGTH TO NO MORE THAN 96 CHARACTERS
  *
  * Filename:        index.php
- * Location:        ${FILE_LOCATION}
- * Project:         SaaS-FED-Notes
- * Date Created:    DD/MM/YYYY
+ * Location:        /App/views
+ * Project:         bm-php-mvc-jokes
+ * Date Created:    20/10/2024
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Blony Maunela 20114950@tafe.wa.edu.au
  *
  */
 

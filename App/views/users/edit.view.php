@@ -1,21 +1,21 @@
 <?php
 /**
- * FILE TITLE GOES HERE
+ * User Edit View
  *
- * DESCRIPTION OF THE PURPOSE AND USE OF THE CODE
- * MAY BE MORE THAN ONE LINE LONG
- * KEEP LINE LENGTH TO NO MORE THAN 96 CHARACTERS
+ * This file provides a form for editing user information within the
+ * bm-php-mvc-jokes webb. It allows users to update their
+ * given name, family name, nickname, email, and password.
  *
- * Filename:        index.view.php
- * Location:        ${FILE_LOCATION}
+ * Filename:        edit.view.php
+ * Location:        /App/views/users
  * Project:         bm-php-mvc-jokes
- * Date Created:    DD/MM/YYYY
+ * Date Created:    20/10/2024
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Blony Maunela 20114950@tafe.wa.edu.au
  *
  */
 
-$pageTitle = "Edit | Users | XXX-MVC-Jokes";
+$pageTitle = "Edit | Users | bm-php-mvc-jokes";
 
 loadPartial("header", ["pageTitle" => $pageTitle]);
 loadPartial('navigation');

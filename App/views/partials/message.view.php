@@ -3,11 +3,11 @@
  * Flash Message Partial
  *
  * Filename:        message.view.php
- * Location:        App/views/partials
+ * Location:        /App/views/partials
  * Project:         bm-php-mvc-jokes
  * Date Created:    23/08/2024
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Blony Maunela 20114950@tafe.wa.edu.au
  *
  */
 

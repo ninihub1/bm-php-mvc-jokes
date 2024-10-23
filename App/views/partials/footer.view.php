@@ -3,11 +3,11 @@
  * Page Footer
  *
  * Filename:        footer.view.php
- * Location:        App/views/partials
- * Project:         SaaS-FED-Notes
- * Date Created:    DD/MM/YYYY
+ * Location:        /App/views/partials
+ * Project:         bm-php-mvc-jokes
+ * Date Created:    20/10/2024
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Blony Maunela 20114950@tafe.wa.edu.au
  *
  */
 ?>
@@ -20,7 +20,7 @@
                             class="text-zinc-500 hover:text-white underline underline-offset-2">Workopia Project</a> from the
             <a href="https://www.traversymedia.com/php-from-scratch"
                class="text-zinc-500 hover:text-white underline underline-offset-2">PHP From Scratch</a> course, and the subsequent
-            <a href="https://github.com/AdyGCode/SaaS-FED-Notes/tree/main/session-07"
+            <a href="https://github.com/AdyGCode/bm-php-mvc-jokes/tree/main/session-07"
                class="text-zinc-500 hover:text-white underline underline-offset-2">supporting tutorial</a>
             by <a href="https://adygcode.github.io"
                   class="text-zinc-500 hover:text-white">Adrian Gould</a> &

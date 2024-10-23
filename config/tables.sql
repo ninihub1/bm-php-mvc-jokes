@@ -84,7 +84,7 @@ CREATE TABLE `bm_php_mvc_jokes`.`users`
 -- --------------------------------------------------------------------------------------------
 -- Seed Users Table
 -- Default password used below is: Password123
--- Create your own hashed passwords by visiting http://xxx-mvc-jokes.text/auth/password
+-- Create your own hashed passwords by visiting http://bm-php-mvc-jokes.text/auth/password
 -- --------------------------------------------------------------------------------------------
 INSERT INTO `bm_php_mvc_jokes`.`users` (`id`, `nickname`, `given_name`, `email`, `user_password`, `created_at`)
 VALUES (1, 'X', 'Unknown', 'no-reply@example.com', '1234567890', '1970-01-01 00:00:01');

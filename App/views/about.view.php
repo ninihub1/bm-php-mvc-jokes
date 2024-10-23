@@ -1,4 +1,17 @@
 <?php
+/**
+ * About Page View
+ *
+ * Filename:        about.view.php
+ * Location:        /App/views
+ * Project:         bm-php-mvc-jokes
+ * Date Created:    17/10/2024
+ *
+ * Author:          Blony Maunela 20114950@tafe.wa.edu.au
+ *
+ */
+
+
 loadPartial('header');
 loadPartial('navigation');
 ?>
@@ -25,16 +38,16 @@ loadPartial('navigation');
     <dl class="grid grid-cols-5 gap-2">
         <dt class="col-span-1">Tutorial Part 1:</dt>
         <dd class="col-span-4">
-            <a href="https://github.com/AdyGCode/SaaS-FED-Notes/tree/main/session-07"
+            <a href="https://github.com/AdyGCode/bm-php-mvc-jokes/tree/main/session-07"
                class="underline underline-offset-2 text-zinc-900 rounded border-2 border-transparent hover:text-white hover:bg-blue-500 hover:border-blue-500">
-                https://github.com/AdyGCode/SaaS-FED-Notes/tree/main/session-07
+                https://github.com/AdyGCode/bm-php-mvc-jokes/tree/main/session-07
             </a>
         </dd>
         <dt class="col-span-1">Tutorial Part 2:</dt>
         <dd class="col-span-4">
-            <a href="https://github.com/AdyGCode/SaaS-FED-Notes/tree/main/session-07"
+            <a href="https://github.com/AdyGCode/bm-php-mvc-jokes/tree/main/session-07"
                class="underline underline-offset-2 text-zinc-900 rounded border-2 border-transparent hover:text-white hover:bg-purple-500 hover:border-purple-500">
-                https://github.com/AdyGCode/SaaS-FED-Notes/tree/main/session-07
+                https://github.com/AdyGCode/bm-php-mvc-jokes/tree/main/session-07
             </a>
         </dd>
         <dt class="col-span-1">Source Code:</dt>

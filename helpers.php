@@ -3,11 +3,11 @@
  * Helper Functions
  *
  * Filename:        helpers.php
- * Location:        ${FILE_LOCATION}
- * Project:         SaaS-FED-Notes
- * Date Created:    DD/MM/YYYY
+ * Location:        /App/views
+ * Project:         bm-php-mvc-jokes
+ * Date Created:    20/10/2024
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Blony Maunela 20114950@tafe.wa.edu.au
  *
  */
 
@@ -34,7 +34,7 @@ function basePath($path = '')
  */
 function loadView($name, $data = [])
 {
-    $viewPath = basePath("App/views/{$name}.view.php");
+    $viewPath = basePath("/App/views/{$name}.view.php");
 
     if (file_exists($viewPath)) {
         extract($data);
@@ -54,7 +54,7 @@ function loadView($name, $data = [])
  */
 function loadPartial($name, $data = [])
 {
-    $partialPath = basePath("App/views/partials/{$name}.view.php");
+    $partialPath = basePath("/App/views/partials/{$name}.view.php");
 
     if (file_exists($partialPath)) {
         extract($data);

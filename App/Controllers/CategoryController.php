@@ -4,10 +4,10 @@
  *
  * Filename:        CategoryController.php
  * Location:        /App/Controllers
- * Project:         XXX-mvc-jokes
+ * Project:         bm-php-mvc-jokes
  * Date Created:    6/09/2024
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Blony Maunela 20114950@tafe.wa.edu.au
  *
  */
 

@@ -3,11 +3,11 @@
  * Page 'Header' and Navigation
  *
  * Filename:        navigation.view.php
- * Location:        App/views/partials
- * Project:         SaaS-FED-Notes
- * Date Created:    DD/MM/YYYY
+ * Location:        /App/views/partials
+ * Project:         bm-php-mvc-jokes
+ * Date Created:    20/10/2024
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Blony Maunela 20114950@tafe.wa.edu.au
  *
  */
 
@@ -40,12 +40,21 @@ if ($authenticated->isAuthenticated()){
             </a></p>
 
         <!-- Show these when visitor is registered & authenticated -->
-        <p><a href="/"
+    <?php if($authenticated->isAuthenticated()): ?>
+        <p><a href="/jokes"
               class="pb-2 px-1 text-text-zinc-700-200 hover:text-sky-300
                      border-0 border-b-2 hover:border-b-sky-500
                      transition ease-in-out duration-500">
                 Jokes
             </a></p>
+    <?php else: ?>
+        <p><a href="/auth/login"
+              class="pb-2 px-1 text-text-zinc-700-200 hover:text-sky-300
+                     border-0 border-b-2 hover:border-b-sky-500
+                     transition ease-in-out duration-500">
+                Jokes
+            </a></p>
+    <?php endif; ?>
 
         <p><a href="/"
               class="pb-2 px-1 text-text-zinc-700-200 hover:text-sky-300

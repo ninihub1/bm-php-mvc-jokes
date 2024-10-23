@@ -1,22 +1,23 @@
 <?php
 /**
- * FILE TITLE GOES HERE
+ * User Index View
  *
- * DESCRIPTION OF THE PURPOSE AND USE OF THE CODE
- * MAY BE MORE THAN ONE LINE LONG
- * KEEP LINE LENGTH TO NO MORE THAN 96 CHARACTERS
+ * This file displays a list of users in the system, allowing for user search
+ * functionality and navigation to add new users. It presents user information
+ * such as nickname, email, and registration date in a structured format.
+ *
  *
  * Filename:        index.view.php
- * Location:        ${FILE_LOCATION}
+ * Location:        /App/views/users
  * Project:         bm-php-mvc-jokes
- * Date Created:    DD/MM/YYYY
+ * Date Created:    20/10/2024
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Blony Maunela 20114950@tafe.wa.edu.au
  *
  */
 
 /* Load HTML header and navigation areas */
-$pageTitle = "Users | XXX-MVC-Jokes";
+$pageTitle = "Users | bm-php-mvc-jokes";
 
 loadPartial("header", ["pageTitle"=>$pageTitle]);loadPartial('navigation');
 

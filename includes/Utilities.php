@@ -8,10 +8,10 @@
  *
  * Filename:        Utilities.php
  * Location:        session-05
- * Project:         SaaS-FED-Notes
+ * Project:         bm-php-mvc-jokes
  * Date Created:    13/08/2024
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Blony Maunela 20114950@tafe.wa.edu.au
  *
  */
 
