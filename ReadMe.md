@@ -1,2 +1,2 @@
-# XXX PHP MVC Jokes Application
+# BM PHP MVC Jokes Application
 
