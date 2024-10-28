@@ -62,7 +62,7 @@ loadPartial('navigation');
                         bg-zinc-200 hover:bg-zinc-300 block
                         py-4 rounded-r
                         transition ease-in-out duration-500">
-                        View Joke...
+                        View Joke Details...
                     </a>
                 </article>
             <?php endforeach; ?>
